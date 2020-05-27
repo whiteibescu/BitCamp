@@ -16,23 +16,23 @@ int main(void)
 	{
 		printf("1~100사이의 수를 입력해주세요\n");
 		scanf("%d", &b);
-	}
 
-	if (b < 100 && b > 1)
-	{
-		if (b > a)
+		if (b <= 100 && b >= 1)
 		{
-			printf("다운!!\n");
+			if (b > a)
+			{
+				printf("다운!!\n");
 
-		}
-		else if (b < a)
-		{
-			printf("up!!\n");
-		}
-		else if (a == b)
-		{
-			printf("%정답입니다!!");
-			play = 0;
+			}
+			else if (b < a)
+			{
+				printf("업!!\n");
+			}
+			else if (a == b)
+			{
+				printf("%정답입니다!!");
+				play = 0;
+			}
 		}
 	}
 }
