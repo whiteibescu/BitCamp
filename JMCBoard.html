@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>게시판-샘플</title>
+</head>
+
+<body>
+    <h1>게시판 구현하기</h1>
+    <hr>
+    <h2>메뉴</h2>
+    <div id="navbar">
+        <a href="javascript:bhome();">목록보기</a>
+        <a href="javascript:bwrite();">글쓰기</a>
+        <!--<a href="javascript:bedit();">글수정</a>-->
+        <!--<a href="javascript:bdelete();">글삭제</a>-->
+        <!--<a href="javascript:bsearch();">글검색</a>-->
+    </div>
+    <hr>
+    <h2>메뉴별 실행 결과 출력</h2>
+    <div id="print"></div>
+    <script>
+        // 요소(tag)를 선택해서 다루는 방법
+        var navbar = document.getElementById("navbar");     
+        var printdiv = document.querySelector("#print");
+
+        // navbar.innerHTML = "<a href='#'>HOME</a>";
+        // printdiv.innerHTML = "등록된 게시글이 없습니다";
+        // 글 번호 저장 배열
+        var board = []; // 가변 배열이므로 여기서 계속 추가해도 상관없음
+        board[0] = 'title 01';
+        board[1] = 'title 02';
+        board[2] = 'title 03';
+
+        // 글 내용 저장 배열
+        var body = [];
+        body[0] = 'body 01';
+        body[1] = 'body 02';
+        body[2] = 'body 03';
+
+        function bhome() {
+            html = '';
+
+            // [input]: 입력 폼
+            // [type="text"]: 텍스트 입력 칸
+            // [value=""]: input, type="text" 일 경우 텍스트 입력 칸의 기본 값
+            // input은 닫는 태그 사용하지 않음
+            // [button]: 일반 버튼, [onclick="bsearch()"]: 클릭 시 다음 함수(bsearch()) 실행하는 'EventListener' 추가
+            // 같은 표현 : <input type="button" onclick="bsearch()" value="확인">
+            html += '<input id="search" type="text">' + '<button type="button" onclick="bsearch()">검색</button>';
+            for (i = 0; i < board.length; i += 1) {
+                html += '<br/>[' + i + '] <a href="javascript:bview(' +
+                    i +
+                    ');">' + board[i] + '</a>';
+            }
+            // 화면 출력
+            printdiv.innerHTML = html;
+        }
+        /* 사용하지 않음
+
+        // 목록보기
+        list = getList();
+        // 선택된 메뉴 실행
+
+        // 결과 출력
+        // 함수들 정의한다...
+        function getList() {
+            // 호출 시 데이터를 줄 수 없는 함수
+            // 게시글들을 꺼내어서 반환한다...
+            return 0;
+        }
+        */
+
+        function bwrite() {
+            // 글쓰기
+            html = "글쓰기 화면";
+
+            // [p]: paragraph. Block 단위 문장(br 필요없음)
+            // 모든 태그는 중첩하여 사용 가능하다(p 태그 내부에 input 태그 생성)
+            html += '<p>제목: <input id="title" type="text" value=""></p>';
+            html += '<p>내용: <input id="description" type="text" value=""></p>';
+            html += '<button type="button" onclick="bsave()">확인</button>';
+
+            printdiv.innerHTML = html;
+        }
+
+        function bview(idx) {
+            // idx: 글 번호를 전달받는다..
+            // 해당 글을 가져오기
+            html = "글 상세보기 화면";
+            html += '<p>내용: ' + body[idx] + '</p>';
+
+            // 버튼 사이에 공백 추가
+            // html의 공백은 10번 띄어도 1개 공백으로 인식하므로 추가 공백 필요할 경우 &nbsp;를 사용한다
+            // ex) <p>hello&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world</p>
+            html += ' <button type="button" onclick="bedit(' + idx + ')">수정</button>';
+            html += ' <button type="button" onclick="bdelete(' + idx + ')">삭제</button>';
+            // 글 보기 출력
+            printdiv.innerHTML = html;
+        }
+
+        function bedit(idx) {
+            // 글수정
+            html = "글 상세보기 화면";
+            html += '<p>제목: <input id="title" type="text" value="' + board[idx] + '"></p>';
+            html += '<p>내용: <input id="description" type="text" value="' + body[idx] + '"></p>';
+            html += ' <button type="button" onclick="bsave(' + idx + ')">확인</button>';
+
+            printdiv.innerHTML = html;
+        }
+
+        function bdelete(idx) {
+            // 글삭제
+
+            // Array.splice(index, howmany, item1, item2, ...)
+            // index(required): 제거할 요소의 인덱스
+            // howmany(optianol): 제거할 요소의 개수. 지정하지 않으면 해당 인덱스 이후의 모든 요소가 삭제됨
+            // item1, ...(optianol): 제거후 추가할 요소
+            
+            // board 배열에서 idx번째의 요소 1개를 제거한다
+            board.splice(idx, 1);
+            body.splice(idx, 1);
+            
+            // 삭제 후 home으로 돌아감
+            bhome();
+        }
+
+        function bsearch() {
+            // 글 검색
+
+            // Element.value: 요소의 value속성의 값을 받아옴.
+            // <input id="search" type="text" value=""> 에서의 value 값 이므로 textarea의 값을 token에 저장하게 됨
+            var token = document.getElementById("search").value;
+
+            html = '';
+            // Escape 문자 표현용 \(역슬래시)
+            // [span]: Block이 아닌 Inline 기본 태그.
+            // Block 속성: Block 단위의 태그. 다음 태그는 다음 줄에 표현됨
+            // Inline 속성: 따로 줄 바꿈을 명시하지 않으면 한 줄에 모두 표현
+            // 아래 for 문이 <br>로 시작하기 때문에 Block 속성의 태그를 사용하게 되면 2번 줄바꿈 하므로 span 사용함
+            html += '<span>' + '\"' + token + '\" 검색결과</span>';
+            for (i = 0; i < board.length; i += 1) {
+                // String1.indexOf(String2)
+                // String2가 String1에 포함된 문자열이라면 String1에서 String2가 시작되는 문자의 인덱스를 리턴
+                // String2가 String1에 포함되지 않았으면 -1 리턴
+
+                // -1이 아니면 이라는 조건을 달아 글제목에 토큰이 포함되지 않았으면 제외함
+                if (board[i].indexOf(token) != -1) {
+                    html += '<br/>[' + i + '] <a href="javascript:bview(' +
+                        i +
+                        ');">' + board[i] + '</a>';
+                }
+            }
+
+            printdiv.innerHTML = html;
+        }
+
+        function bsave(idx) {
+            // 생성/수정 액션
+            // parameter로 받은 idx를 판단하여 들어온 값이 없으면(idx가 undefined이면) 새 글 생성으로 간주
+            if (idx == undefined) {
+                // 배열의 길이는 항상 현재 인덱스보다 1 크므로 board.length 이용. 대신 idx+1 사용하여도 무방하다
+                // 현재 배열의 바로 다음 인덱스에 정보를 추가한다
+                board[board.length] = document.getElementById("title").value;
+                body[body.length] = document.getElementById("description").value;
+            } else {
+                // 지정된 idx가 있으면 해당 인덱스의 정보를 덮어쓴다
+                board[idx] = document.getElementById("title").value;
+                body[idx] = document.getElementById("description").value;
+            }
+            bhome();
+        }
+    </script>
+</body>
+
+</html>
