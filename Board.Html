@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>게시판-샘플</title>
+</head>
+<body>
+    <h1>게시판 구현하기</h1>
+    <hr>
+    <h2>메뉴</h2>
+    <div id ="navbar"> 
+        
+    </div>
+    <hr>
+    <h2>메뉴별 실행 결과 출력</h2>
+    <div id ="print"> 
+        
+    </div>
+
+
+    <script>
+        // 요소(tag)를 선택해서 다르는 방법
+        var navbar= document.getElementById("navbar");
+        var printdiv = document.querySelector("#print")
+
+        navbar.innerHTML = "<a href='#'>HOME</a>";
+        printdiv.innerTEXT = "등록된 게시글이 없습니다";
+
+    </script>
+</body>
+</html>
