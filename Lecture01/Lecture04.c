@@ -29,7 +29,25 @@ int main(void) {
 	printf(" %d \n", ch + 20);
 	printf(" %c \n", 97 + 20);
 	// char도 실제로는 정수이다.
-	return 0;
+	
 
 	//이해가 안간다....
+
+	// printf(" %d \n", 97 / 0)
+	printf(" %lf \n", (double)97 / 20);
+	//먼저 실수로 바꾼 후 나누기 할 것...
+	printf(" %lf \n", (double)(97 / 20));
+
+	printf(" %d \n", n % 5);
+
+	// 형변환 시 주의
+	int a = 256;
+	double b = a; // 정수에서 실수로 바꾼다
+	int c = b;
+
+	printf("%d %lf %d \n", a, b, c);
+
+	//8byte --> 4byte : 값이 잘린다...
+
+	return 0;
 }
