@@ -24,5 +24,8 @@
     <ClCompile Include="Lecture03.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lecture04.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
