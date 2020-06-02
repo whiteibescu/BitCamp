@@ -1,7 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+/*
+실행 순서 ->
+c = ++a;
+c = a++;
 
+b = 0;
+a = 1;
+b = 10 + a++;
+
+*/
 int main(void)
 {
     for (int j = 1; j <= 9; j++)
