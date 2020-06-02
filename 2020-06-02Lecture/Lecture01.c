@@ -24,7 +24,7 @@ int main(void) {
 		// 스왑하기 위해서는 변수 하나가 더 필요
 		// 비트연산자 XOR 연산 활용법
 
-		ㄹ
+		
 	}
 
 	for (int i = min; i < max+1 ; i++)
