@@ -30,5 +30,8 @@
     <ClCompile Include="AnswerToAssignment.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lecture03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
