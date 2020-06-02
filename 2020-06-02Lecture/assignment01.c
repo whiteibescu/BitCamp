@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main()
+int main(void)
 {
     
     for (int i = 2; i <= 9; i++)
