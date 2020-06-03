@@ -45,5 +45,11 @@
     <ClCompile Include="Assignment.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="answer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
