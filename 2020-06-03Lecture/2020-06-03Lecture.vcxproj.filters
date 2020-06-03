@@ -18,5 +18,8 @@
     <ClCompile Include="Lecture01.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lecture02.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
