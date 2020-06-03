@@ -42,5 +42,8 @@
     <ClCompile Include="omokpan.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Assignment.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
