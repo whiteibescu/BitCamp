@@ -4,7 +4,43 @@
 #include <math.h>
 #include <conio.h>
 
-int main(void)
+int main(void) {
+	char ch = 'A';
+	printf("size : %d \n", sizeof(ch));
+	printf("address : %d \n", &(ch));	//변수의 주소
+	printf("size : %d \n\n", sizeof(&ch)); //주소의 크기
+
+	char* p;
+	printf("size : %d \n", sizeof(p));
+	printf("address : %d \n", &(p));	//변수의 주소
+	printf("size : %d \n", sizeof(&p)); //주소의 크기
+
+	p = &ch;		//ch 변수의 주소를 저장한다...
+	printf("%d \n", p); //주소
+	printf("%d \n", *p); // 이름 ch 의 값 
+	*p = "B";
+	printf("%c \n", ch);
+	
+	p = 'C';
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main_01(void)
 {
 	//포인터 변수의 선언 : 자료형 * 변수명;
 	// 포인터 변수에 저장된 주소에 어떤 유형 있냐
