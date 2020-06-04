@@ -30,5 +30,8 @@
     <ClCompile Include="2DimensionalArray.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lecture04.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
