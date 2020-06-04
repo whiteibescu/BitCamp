@@ -21,5 +21,11 @@
     <ClCompile Include="lecture02.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Star.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lecture03.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

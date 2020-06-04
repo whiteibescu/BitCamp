@@ -15,9 +15,6 @@ int main(void) {
 
 
 
-
-
-
 int drawLine(int x) {
 		// 화면 선을 그리는 프로그램
 	int y;
