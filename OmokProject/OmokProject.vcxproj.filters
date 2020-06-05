@@ -18,5 +18,8 @@
     <ClCompile Include="Omok.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="omoktip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
