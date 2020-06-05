@@ -244,34 +244,6 @@ int team02(int pan[][PAN_SIZE], int* px, int* py)
 	return 0;
 
 
-	//백돌일떄
-
-	*px = rand() % PAN_SIZE;
-	*py = rand() % PAN_SIZE;//처음에 랜덤으로 둔다.
-	int firstx = *px;
-	int firsty = *py;;
-	int count = 1;
-
-	//그다음은 그 옆에 둔다.
-	if (count == 1) {
-		for (int r = 0; r < PAN_SIZE; ++r) {
-			for (int c = 0; c < PAN_SIZE; ++c) {
-
-				if (pan[r][c] > 0) {
-
-					*px = firstx++;
-					*py = firsty;
-					count++;
-					return 0;
-				}
-
-			}
-
-		}
-	}
-
-}
-
 
 
 
