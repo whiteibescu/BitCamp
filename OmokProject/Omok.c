@@ -42,9 +42,16 @@ void panInit(int stone[][PAN_SIZE])
 void panDisplay(int stone[][PAN_SIZE])
 {
 	int i, j;
+	printf("  ");
+	for (j = 0; j < PAN_SIZE; j++)
+	{
+		printf("%2d", j);
+	}
+	printf("\n");
 
 	for (i = 0; i < PAN_SIZE; i++)
 	{
+		printf("%2d", i);
 		for (j = 0; j < PAN_SIZE; j++)
 		{
 			printf("%s", img[stone[i][j]]);
@@ -54,12 +61,16 @@ void panDisplay(int stone[][PAN_SIZE])
 }
 int setPosition(int field[][PAN_SIZE], int stone, int x, int y)
 {
-	if (y > (PAN_SIZE - 1) || y < 0 || x >(PAN_SIZE - 1) || x < 0 || field[y][x] == 0 || field[y][x] == 1) {
+	if (y > (PAN_SIZE - 1) || y < 0 ||
+		x >(PAN_SIZE - 1) || x < 0 ||
+		field[y][x] == 0 || field[y][x] == 1)
+	{
 		printf("%s 잘못된 위치입니다.\n", (stone == 0) ? "Black" : "White");
-		//		system("pause");
 		return 1;
 	}
-	else		field[y][x] = stone;
+	else {
+		field[y][x] = stone;
+	}
 	return 0;
 }
 
@@ -70,7 +81,7 @@ int judge(int stone[][PAN_SIZE], int player, int px, int py)
 
 	count = 0;
 	for (i = 0; i < PAN_SIZE; i++)
-	{//수평
+	{	// 수평
 		if (stone[py][i] == player)
 		{
 			count++;
@@ -80,7 +91,7 @@ int judge(int stone[][PAN_SIZE], int player, int px, int py)
 	}
 	count = 0;
 	for (i = 0; i < PAN_SIZE; i++)
-	{// 수직
+	{	// 수직
 		if (stone[i][px] == player)
 		{
 			count++;
@@ -89,9 +100,13 @@ int judge(int stone[][PAN_SIZE], int player, int px, int py)
 		else if (count)	count = 0;
 	}
 	count = 0;
-	for (i = 0; (px - py) + i < PAN_SIZE; i++)
-	{  // 대각선 
-		if (stone[i][(px - py) + i] == player)
+	int b;
+	int y;
+	b = py - px;
+	for (i = 0; i < PAN_SIZE; i++)
+	{
+		y = i + b;
+		if ((y >= 0 && y < PAN_SIZE) && stone[y][i] == player)
 		{
 			count++;
 			if (count > 4)	return 1;
@@ -99,9 +114,11 @@ int judge(int stone[][PAN_SIZE], int player, int px, int py)
 		else if (count)	count = 0;
 	}
 	count = 0;
-	for (i = 0; (px + py) - i >= 0; i++)
-	{ // 대각선
-		if (stone[i][(px + py) - i] == player)
+	b = py + px;
+	for (i = 0; i < PAN_SIZE; i++)
+	{
+		y = i + b;
+		if ((y >= 0 && y < PAN_SIZE) && stone[y][i] == player)
 		{
 			count++;
 			if (count > 4)	return 1;
@@ -111,8 +128,35 @@ int judge(int stone[][PAN_SIZE], int player, int px, int py)
 	count = 0;
 	return 0;
 }
+int judgedred(int array[][PAN_SIZE], int size, int player)
+{
+	int i, j;
+	int count = 0;
+	int k;
 
+	k = player;
+
+	for (i = 0; i < PAN_SIZE - 5; i++)
+	{
+		for (j = 0; j < PAN_SIZE; j++)
+		{
+			if (array[i][j] == k && array[i + 1][j + 1] == k && array[i + 2][j + 2] == k && array[i + 3][j + 3] == k && array[i + 4][j + 4] == k)
+				return 1;
+			else if (array[i][j] == k && array[i - 1][j + 1] == k && array[i - 2][j + 2] == k && array[i - 3][j + 3] == k && array[i - 4][j + 4] == k)
+				return 1;
+			else if (array[i][j] == k && array[i - 1][j + 1] == k && array[i - 2][j + 2] == k && array[i - 3][j + 3] == k && array[i - 4][j + 4] == k)
+				return 1;
+			else if (array[i][j] == k && array[i][j + 1] == k && array[i][j + 2] == k && array[i][j + 3] == k && array[i][j + 4] == k)
+				return 1;
+			else if (array[i][j] == k && array[i + 1][j] == k && array[i + 2][j] == k && array[i + 3][j] == k && array[i + 4][j] == k)
+				return 1;
+		}
+	}
+	return 0;
+}
 int copyArray(int dummy[][PAN_SIZE], int pan[][PAN_SIZE]) {
+
+
 	for (int i = 0; i < PAN_SIZE; ++i) {
 		for (int k = 0; k < PAN_SIZE; ++k) {
 			dummy[i][k] = pan[i][k];
@@ -120,26 +164,130 @@ int copyArray(int dummy[][PAN_SIZE], int pan[][PAN_SIZE]) {
 	}
 	return 0;
 }
-//승패
-//흑돌 백돌
-//함수 두개 추가
 
-int team01(int pan[][PAN_SIZE], int* px, int* py) {
-	*px = 0
-	*py = rand() % (PAN_SIZE-1);
-	return 0;
-}
-int team02(int pan[][PAN_SIZE], int* px, int* py) {
-	
-	*px = rand(time(NULL)) % (PAN_SIZE-1);
-	*py = rand(time(NULL)) % (PAN_SIZE-1);
 
-	return 0;
+
+
+int team01(int pan[][PAN_SIZE], int* px, int* py)
+{
+	*px = rand() % PAN_SIZE;
+	*py = rand() % PAN_SIZE;
 }
-int (*play[])(int[][PAN_SIZE], int*, int*) = { team01,team02 };
+static int count = 0;
+
+/*if (pan[r][c] > 0) {
+
+	*px = c;
+	*py = r;
+	count++;
+	return 0;
+}*/
+int team02(int pan[][PAN_SIZE], int* px, int* py)
+{
+	static int mystone = -1;
+	int y = *py;
+	int x = *px;
+
+	if (*px == -1) {
+		게임 시작 의미
+			if (*py == -1) {
+				mystone = 0;
+				if (*py == 0)
+					mystone = 1;
+			}
+	}
+	else {
+		if (mystone == 0) {
+			x = rand() % PAN_SIZE;
+			y = rand() % PAN_SIZE;
+
+		}
+		else {
+			// 백돌 방어
+			x = ;
+			y = ;
+
+		}
+	}
+
+	*px = x;
+	*py = y;
+	return 1;
+
+	// 상대방이 돌을 놓은 위치
+	int y = *py;
+	int x = *px;
+	if (pan[y][x + 1] > 1) {
+		*px = x + 1;
+		*py = y;
+	}
+	if (pan[y][x - 1] > 1) {
+		*px = x + 1;
+		*py = y;
+	}
+	if (pan[y - 1][x] > 1) {
+		*px = x + 1;
+		*py = y;
+	}
+	if (pan[y + 1][x] > 1) {
+		*px = x + 1;
+		*py = y;
+	}
+	if (pan[y + 1][x + 1] > 1) {
+		*px = x + 1;
+		*py = y;
+	}
+	if (pan[y - 1][x - 2] > 1) {
+		*px = x + 1;
+		*py = y;
+	}
+	return 0;
+
+
+	//백돌일떄
+
+	*px = rand() % PAN_SIZE;
+	*py = rand() % PAN_SIZE;//처음에 랜덤으로 둔다.
+	int firstx = *px;
+	int firsty = *py;;
+	int count = 1;
+
+	//그다음은 그 옆에 둔다.
+	if (count == 1) {
+		for (int r = 0; r < PAN_SIZE; ++r) {
+			for (int c = 0; c < PAN_SIZE; ++c) {
+
+				if (pan[r][c] > 0) {
+
+					*px = firstx++;
+					*py = firsty;
+					count++;
+					return 0;
+				}
+
+			}
+
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+static int (*play[])(int[][PAN_SIZE], int*, int*) = { team01,team02 };
 
 int main()
 {
+
 	int player = 0, x = 0, y = 0;
 	int pan[PAN_SIZE][PAN_SIZE] = { 0 };
 	int dummy[PAN_SIZE][PAN_SIZE] = { 0 };
@@ -175,23 +323,22 @@ int main()
 			{
 				system("cls");
 				panDisplay(pan);
-				printf("player[%d] Win!!!!!!!\n", player);
+				printf("player[%d]@(%d,%d) Win!!!!!!!\n",
+					player, x, y);
 				break;
 			}
 			// 플레이어 변경
 			player ^= 1;
+			stoneCount++;
+			if (stoneCount >= (PAN_SIZE * PAN_SIZE))
+			{
+				system("cls");
+				panDisplay(pan);
+				printf("더이상 돌을 놓을 자리가 없습니다.\n무승부입니다.");
+				break;
+			}
 		}
-		stoneCount++;
-		if (stoneCount >= (PAN_SIZE * PAN_SIZE))
-		{
-			system("cls");
-			panDisplay(pan);
-			printf("더이상 돌을 놓을 자리가 없습니다.\n무승부입니다.");
-			break;
-		}
-		//		_getch();
-				//		Sleep(500);
 	}
-
+	printf("%d", count);
 	return 0;
 }
