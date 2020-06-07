@@ -112,8 +112,10 @@ int step05() {
 	int score[5 * 3] = { 0 }; //[5][3]
 
 	for (int i = 0; i < 13; i += 3) {
-		printf("[0]번 학생의 점수 > ");
-		scanf_s("%d %d %d \n", &score[i + 0], &score[i + 1], score[i + 2]);
+		int no = 1;
+		printf("[%d]번 학생의 점수 > ", no);
+		no++; //no+=1
+		scanf_s("%d %d %d", &score[i + 0], &score[i + 1], score[i + 2]);
 
 	}
 
