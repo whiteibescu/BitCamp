@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <ctype.h>
 int main(void) {
 	char ch;
 	int digit = 0; // 숫자 수
@@ -7,10 +10,25 @@ int main(void) {
 	int words = 0; // 띄어쓰기 
 	int number = 0; // 정수들의 총합까지
 	while ( (ch = getchar() ) != EOF) {
+		/* 
+		입력한것이 숫자이면 =>
+		개수를 센다 => digit++
+
 
 		
+		*/
+		if (ch >= '0' && ch <= '9') digit++; 
+		
+		if (ch >= 'A' && ch <= 'Z') alpha++;
+
+		if (ch >= 'a' && ch <= 'z') alpha++;
+
+		if (ch == ' ' || ch == '\t' || ch == '\n') words++; //문제 : 엔터 두번 => 워드 수
+		
 	}
-	printf("\n");
+	printf("숫자 수 출력 :%d \n", digit);
+	printf("영문자 수 출력 :%d \n", alpha);
+	printf("띄어쓰기 출력 :%d \n", words);
 
 
 	return 0;
