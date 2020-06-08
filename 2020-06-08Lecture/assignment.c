@@ -9,6 +9,8 @@ int main(void) {
 	int alpha = 0; // 영문자 수
 	int words = 0; // 띄어쓰기 
 	int number = 0; // 정수들의 총합까지
+	int prev = 0;
+	int n = 0;
 	while ( (ch = getchar() ) != EOF) {
 		/* 
 		입력한것이 숫자이면 =>
@@ -25,10 +27,16 @@ int main(void) {
 
 		if (ch == ' ' || ch == '\t' || ch == '\n') words++; //문제 : 엔터 두번 => 워드 수
 		
+		if ((n > 0) && (n == prev)) {
+			words--;
+		}
+
+		prev = n;
+		n++;
 	}
 	printf("숫자 수 출력 :%d \n", digit);
 	printf("영문자 수 출력 :%d \n", alpha);
-	printf("띄어쓰기 출력 :%d \n", words);
+	printf("단어수 출력 :%d \n", words);
 
 
 	return 0;
