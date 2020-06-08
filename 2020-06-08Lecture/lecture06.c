@@ -28,11 +28,15 @@ int main(void)
 	printf("%d \n", sizeof(BMP));
 	printf("%d \n", sizeof(bmp));
 	//bmp 의 멤버 table에 RGB를 요소로 하는 길이 512 인 배열 생성
-	RGB pixel[512];
-	bmp.table = pixel; //pixel + 0 == &pixel[0]
+//	RGB pixel[512];
+//	bmp.table = pixel; //pixel + 0 == &pixel[0]
 
 
 	// 동적할당
-	bmp.table = (RGB*)
+	bmp.table = (RGB*)malloc(512 * sizeof(RGB));
+
+	free(bmp.table);
+
+	return 0;
 }
 	
