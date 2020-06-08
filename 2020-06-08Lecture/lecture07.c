@@ -11,7 +11,7 @@ int string_array(){
 	fgets(s1, sizeof(s1), stdin);
 	printf("string > ");
 	fgets(s2, sizeof(s3), stdin);
-	printf("string > ");
+	printf("string > "); 
 	fgets(s2, sizeof(s3), stdin);
 
 	fputs(s1, stdout); //file (, FILE stream);
@@ -92,11 +92,46 @@ int string_dynamic() {
 	return 0;
 }
 
+//배열명이 주소다
+char* toString() { //문자열을 반환하는 함수
+	// 지역변수는 함수 종료 시 사라진다...
+	// 동적할당 - 힙에 생성되어서 함수와는 관계 유지 가능
+	char * name = (char*)malloc(80)
+	// 문자열을 저장(대입)
+	//name = "jangs ma"; // 배열명은 상수다... 대입연산 불가
+	
+	strncpy(name, "jangs ma", 80); // 문자열 저장 시 
+
+	free(name);
+
+	return NULL; //주소가 없다 = 
+}
+
+int getString(char *param, int size) {  //문자열을 받는 함수
+	int i;
+	for (int i = 0; i < sizeof(param) / sizeof(char); ++i) {
+		param[i] = '0' + i;
+	}
+	param[i] = 0;
+	return 0;
+
+	return 0;
+}
+
 
 int main(void) {
 	 
-	string_points();
-
+	char * p = toString();
+	if (p == NULL) { //널 확인하기..
+		printf("문자열이 없다\n");
+	}
+	else {
+	printf("%s \n", p);
+	free(p);
+	}
+	char name[80]
+	getString(name);//배열명, 길이
+	printf("%s ")
 
 	return 0;
 }
