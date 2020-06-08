@@ -51,7 +51,7 @@ int string_points() {
 		fputs(pl[i], stdout);
 	}
 
-	for (int i = 0; i < 5; ++i;) {
+	for (int i = 0; i < 5; ++i) {
 		free(pl[i]);
 	}
 	
@@ -63,6 +63,34 @@ int string_points() {
 }
 
 
+
+int string_dynamic() {
+	char** ap = NULL; //포인터 배열 (동적)
+	int count;
+	printf("문자열 입력개수 : ");
+	scanf_s("%d", &count);
+	ap = (char**)malloc(count * sizeof(*ap)); //포인터가 가르키는 변수의 크기?
+
+	for (int i = 0; i < count; ++i)
+	{
+		printf("string >");
+		ap[i] = (char*)malloc(80);
+		fgets(ap[i], 80, stdin);
+				
+	}
+
+	for (int i = 0; i < count; ++i) {
+		fputs(ap[i], stdout);
+	}
+
+	for (int i = 0; i < count; ++i) { // 포인터 요소부터 해제 하고
+		free(ap[i]);
+	}
+	free(ap);						//해제
+
+
+	return 0;
+}
 
 
 int main(void) {
