@@ -18,5 +18,11 @@
     <ClCompile Include="lecture01.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fuctionkeyvalue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lecture02.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
