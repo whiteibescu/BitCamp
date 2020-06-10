@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+include <stdio.h>#include <stdlib.h>
 #include <string.h>
 
 int main(void) {
@@ -24,11 +23,8 @@ int main(void) {
 
     // EOF(^Z)가 나올때 까지 줄 단위로 입력 받되, 제일 앞의 문자부터 하나씩 꺼내서 체크한다
     while ((ch = getchar()) != EOF) {
-
-        // 현재 문자가 알파벳이나 숫자이면,
-        if (ch >= 'A' && ch <= 'z' || ch >= '0' && ch <= '9') {
-            // 특히 알파벳이면
-            if (ch >= 'A' && ch <= 'z') {
+        // 현재 문자가 알파벳이나 숫자이면,        if (ch >= 'A' && ch <= 'z' || ch >= '0' && ch <= '9') {
+            // 특히 알파벳이면            if (ch >= 'A' && ch <= 'z') {
                 // 알파벳 수 증가
                 alpha++;
             }
@@ -54,8 +50,7 @@ int main(void) {
             // 이름 그대로 a to i. 원형은 atoi()이며, long long에 대응하기위해 추가된 함수이다.
             // 문자로 시작하면 0 리턴, 숫자로 시작했지만 문자가 섞인 경우에는 문자가 처음 나오기 직전까지 숫자로 변환
             long long atoi_res = _atoi64(str);
-            // 100의 자리에 대응하기 위한 새 문자열 동적 할당
-            char* itoa_res = (char*)malloc(100);
+            // 100의 자리에 대응하기 위한 새 문자열 동적 할당            char* itoa_res = (char*)malloc(100);
             // 숫자->문자열 함수: _i64toa_s(src, dst, size(bytes), radix(진수))
             // 원형은 itoa()이고, long long과 버퍼오버플로우에 대응하기위해 추가된 함수
             _i64toa_s(atoi_res, itoa_res, 100, 10);
@@ -78,14 +73,10 @@ int main(void) {
             }
 
             // 빠져나가기 전에 문자열을 빈 문자열로 초기화한다
-            strcpy_s(str, 1, "");
-            // 어쨌든 문자열이니 증가시킨다(위에서 자꾸 감소시키게 되는 원인)
-            words++;
+            strcpy_s(str, 1, "");            // 어쨌든 문자열이니 증가시킨다(위에서 자꾸 감소시키게 되는 원인)            words++;
 
             // 동적 할당 했으니 해제한다
-            free(itoa_res);
-
-            // 공백이니 문자열 그만 붙이고 while문 마저 돌린다
+            free(itoa_res);       // 공백이니 문자열 그만 붙이고 while문 마저 돌린다
             continue;
         }
     }
@@ -100,4 +91,8 @@ int main(void) {
     free(str);
 
     return 0;
-}
+}  
+
+
+
+
