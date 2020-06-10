@@ -33,5 +33,11 @@
     <ClCompile Include="address3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Start.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Structure.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
