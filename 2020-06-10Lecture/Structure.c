@@ -6,42 +6,44 @@
 #include <string.h>
 
 struct person {
-	char name[15];
+	char name[30];
 	int age;
-	char sex[15];
+	char sex[30];
 };
 
 int main(void) {
-	struct person dart;
+	int choose;
+	printf("=========================\n");
+	printf("① 주소록 추가\n\n");
+	printf("② 주소록 보기\n\n");
+	printf("③ 주소록 검색\n");
+	printf("=========================\n");
+	scanf("%d", &choose);
+
+
+
+
+
+	struct person dart[2];
+	int i;
+	
+	for (int i = 0; i < 2; ++i) {
+		printf("이름 : ");
+		scanf("%s", &dart[i].name);
+		printf("나이 : ");
+		scanf("%d", &dart[i].age);
+		printf("성별 : ");
+
+		scanf("%s", &dart[i].sex);
+	}
 	
 
-	printf("이름 : ");
-	scanf("%s", dart.name);
-	printf("나이 : ");
-	scanf("%d", dart.age);
-	printf("성별 : ");
-	scanf("%s", dart.sex);
 
-
-	printf("이름 : %s  나이 : %d 성별 : %s\n", dart.name, dart.age, dart.sex);
-
-
-	/*
-	printf("이름 : ");
-	scanf("%s", dart.name[1]);
-	printf("나이 : ");
-	scanf("%s", dart.age[1]);
-	printf("성별 : ");
-	scanf("%s", dart.sex);
-
-	printf("이름 : ");
-	scanf("%s", dart.name[2]);
-	printf("나이 : ");
-	scanf("%s", dart.age[2]);
-	printf("성별 : ");
-	scanf("%s", dart.sex)[2];
-	*/
-
+	for (int i = 0; i < 2; ++i) {
+		
+		
+		printf("이름 : %s  나이 : %d 성별 : %s\n", dart[i].name, dart[i].age, dart[i].sex);
+	}
 	return 0;
 
 }

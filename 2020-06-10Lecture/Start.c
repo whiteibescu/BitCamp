@@ -41,10 +41,6 @@ int main(void)
 
 	printf("번호가 필요한 성함을 입력해주세요 : ");
 	scanf("s", &Rname);
-	if (Rname = name || Rname = name1)
-	{
-		printf("%d", )
-	}
 
 	return 0;
 

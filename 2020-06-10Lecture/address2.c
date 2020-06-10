@@ -6,13 +6,7 @@ int main()
 	char NAME[3][20], PHONE[3][20], SUCH[1][20];
 	int i, count = 0;
 	/*이름과 전화번호를 배열에 저장*/
-	for (i = 0; i < 3; i++)
-	{
-		printf("%d st 사람 이름 : ", i + 1);
-		scanf("%s", &NAME[i]);
-		printf("%d st 사람 전화번호 : ", i + 1);
-		scanf("%s", &PHONE[i]);
-	}
+2
 	/*for (i = 0; i < 3; i++)
 	{
 	   printf("%s     %s\n", NAME[i], PHONE[i]);
