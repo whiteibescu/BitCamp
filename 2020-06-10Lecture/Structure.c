@@ -19,16 +19,17 @@ struct person {
 int main(void) {
     int choose;
     struct person dart[MAX_LENGTH] = { 0, };
-    // int i = 0;
+    int i = 0;
     int count = 0;
 
     while (1)
     {
-        printf("=========================\n");
-        printf("① 주소록 추가\n\n");
+        printf("=========================================================================\n");
+        printf("① 주소록 추가\n\n\n");
         printf("② 주소록 전체보기\n\n");
-        printf("③ 종료\n");
-        printf("=========================\n\n");
+        printf("③ 주소록 검색\n\n");
+        printf("④ 종료\n");
+        printf("=========================================================================\n\n");
         scanf("%d", &choose);
         system("cls");
 
@@ -46,19 +47,29 @@ int main(void) {
                 printf("등록이 완료되었습니다!\n");
                 printf("\n");
                 // i++;
-                count++;
-                choose--;
+                count++;             
             }
         }
+
         if (choose == 2) {
             for (int i = 0; i < count; ++i) {
                 printf("%d. 이름 : %s  나이 : %d 성별 : %s\n\n\n\n", i + 1, dart[i].name, dart[i].age, dart[i].sex);
             }
         }
+
+
         if (choose == 3) {
-            break;
+            printf("검색할 이름을 입력해주세요 : ");
+            if (scanf("%s", dart[i].name)) {
+                printf("%d. 이름 : %s  나이 : %d 성별 : %s\n\n\n\n", i + 1, dart[i].name, dart[i].age, dart[i].sex);
+            }
         }
+
+        if (choose == 4) {
+            break;
+        }    
+
+        
     }
     return 0;
 }
-//최종수정
