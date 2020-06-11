@@ -13,7 +13,7 @@
 struct person {
     int id;
     char name[30];
-    int age;
+    char number[30];
     char sex[30];
 };
 
@@ -41,8 +41,8 @@ int main(void) {
                 dart[count].id = ++id;
                 printf("이름 : ");
                 scanf("%s", &dart[count].name);
-                printf("나이 : ");
-                scanf("%d", &dart[count].age);
+                printf("전화번호 : ");
+                scanf("%s", &dart[count].number);
                 printf("성별 : ");
                 scanf("%s", &dart[count].sex);
                 printf("\n");
@@ -54,7 +54,7 @@ int main(void) {
         if (choose == 2) {
             for (int i = 0; i < MAX_LENGTH; ++i) {
                 if (dart[i].id != 0) {
-                    printf("%2d. ID: %2d\t 이름 : %s\t나이 : %d\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].age, dart[i].sex);
+                    printf("%2d. ID: %2d\t 이름 : %s\t전화번호 : %s\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].number, dart[i].sex);
                 }   
             }
         }
@@ -65,7 +65,7 @@ int main(void) {
             printf("----기존 주소록----\n\n");
             for (int i = 0; i < MAX_LENGTH; ++i) {
                 if (dart[i].id != 0) {
-                    printf("%2d. ID: %2d\t 이름 : %s\t나이 : %d\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].age, dart[i].sex);
+                    printf("%2d. ID: %2d\t 이름 : %s\t전화번호 : %s\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].number, dart[i].sex);
                 }
             }
 
@@ -79,8 +79,8 @@ int main(void) {
                     printf("[ID: %d] 고객의 정보를 수정합니다.\n", dart[i].id);
                     printf("이름(%s) : ", dart[i].name);
                     scanf("%s", &dart[i].name);
-                    printf("나이(%d) : ", dart[i].age);
-                    scanf("%d", &dart[i].age);
+                    printf("전화번호(%s) : ", dart[i].number);
+                    scanf("%s", &dart[i].number);
                     printf("성별(%s) : ", dart[i].sex);
                     scanf("%s", &dart[i].sex);
                     printf("\n");
@@ -97,7 +97,7 @@ int main(void) {
             printf("----기존 주소록----\n\n");
             for (int i = 0; i < MAX_LENGTH; ++i) {
                 if (dart[i].id != 0) {
-                    printf("%2d. ID: %2d\t 이름 : %s\t나이 : %d\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].age, dart[i].sex);
+                    printf("%2d. ID: %2d\t 이름 : %s\t전화번호 : %s\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].number, dart[i].sex);
                 }
             }
 
@@ -111,7 +111,7 @@ int main(void) {
                 if (dart[i].id == target) { // index i
                     printf("%s님의 정보를 삭제했습니다.\n\n\n", dart[i].name);
                     for (int j = i; j < MAX_LENGTH - 1; j++) {
-                        memmove(dart + j, dart + j + 1, 68);
+                        memmove(dart + j, dart + j + 1, 94);
                     }                    
                     count--;
                 }
