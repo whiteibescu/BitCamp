@@ -39,7 +39,7 @@
     <ClCompile Include="Structure.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.c">
+    <ClCompile Include="Assignment.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
