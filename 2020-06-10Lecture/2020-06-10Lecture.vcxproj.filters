@@ -42,5 +42,8 @@
     <ClCompile Include="Assignment.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Presentation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -52,8 +52,8 @@ int main(void) {
                 count++;                
             }
         }
-        if (choose == 2) {
-            for (int i = 0; i < MAX_LENGTH; ++i) {
+        if (choose == 2) { 
+            for (int i = 0; i < MAX_LENGTH; ++i) { 
                 if (dart[i].id != 0) {
                     printf("%2d. ID: %2d\t 이름 : %s\t전화번호 : %s\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].number, dart[i].sex);
                 }   
@@ -130,19 +130,6 @@ int main(void) {
             printf("           #   #    #                       #       #   #   \n");
             printf("           #   #    ######           ########       #####   \n");
             break;
-        }
-
-        if (choose == 5) {
-            char target[20];
-            printf("찾으실 이름을 입력해주세요 : ");
-            scanf("%d", &target);
-            for (int i = 0; i < MAX_LENGTH; ++i) {
-                if (dart[i].id != 0) {
-                    if (strcmp(target, dart[i].name) == 0) {
-                        printf("%2d. ID: %2d\t 이름 : %s\t전화번호 : %s\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].number, dart[i].sex);
-                    }
-                }
-            }
         }
     }
     return 0;
