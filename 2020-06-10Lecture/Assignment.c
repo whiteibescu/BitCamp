@@ -30,6 +30,7 @@ int main(void) {
         printf("2. 주소록 전체보기[%d/20]\n\n", count);
         printf("3. 주소록 수정\n\n");
         printf("4. 주소록 삭제\n\n");
+        printf("5. 주소록 검색\n\n");
         printf("0. 종료\n");
         printf("=========================\n\n");
         scanf("%d", &choose);
@@ -63,8 +64,8 @@ int main(void) {
 
             printf("----주소록 수정중----\n\n");
             printf("----기존 주소록----\n\n");
-            for (int i = 0; i < MAX_LENGTH; ++i) {
-                if (dart[i].id != 0) {
+            for (int i = 0; i < MAX_LENGTH; ++i) { //20개 아이디를 불러오기
+                if (dart[i].id != 0) { // 초기화값이 0이 아닌것들을 찾기 = 
                     printf("%2d. ID: %2d\t 이름 : %s\t전화번호 : %s\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].number, dart[i].sex);
                 }
             }
@@ -129,6 +130,19 @@ int main(void) {
             printf("           #   #    #                       #       #   #   \n");
             printf("           #   #    ######           ########       #####   \n");
             break;
+        }
+
+        if (choose == 5) {
+            char target[20];
+            printf("찾으실 이름을 입력해주세요 : ");
+            scanf("%d", &target);
+            for (int i = 0; i < MAX_LENGTH; ++i) {
+                if (dart[i].id != 0) {
+                    if (strcmp(target, dart[i].name) == 0) {
+                        printf("%2d. ID: %2d\t 이름 : %s\t전화번호 : %s\t성별 : %s\n", i + 1, dart[i].id, dart[i].name, dart[i].number, dart[i].sex);
+                    }
+                }
+            }
         }
     }
     return 0;
