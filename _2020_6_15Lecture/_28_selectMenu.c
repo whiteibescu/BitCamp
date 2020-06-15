@@ -12,16 +12,6 @@
 절차지향 프로그래밍(시간의 흐름, 선택)
 */
 
-/*
-설계
-1.하향식 설계
-그림, 아키텍처 -> 코드화
-2.상향식 설계
-; 부분(단위) 코드 완성
--> 감이 생긴다
--> 중간 정도에 전체 레이아웃을 설계
--> 나머지 부분을 완성해나간다
-*/
 #include <stdio.h>
 
 
@@ -66,15 +56,13 @@ void processWork(int selNum)
 void main()
 {
 	int selNum = 0;  //4바이트 크기
+
+
 	
-	printf("%#x\n", viewMenu);
-	printf("%#x\n", getSelNum);
-	printf("%#x\n", processWork);
-
-
-
-
-	viewMenu();				// 1. 메뉴 보여주기
-	selNum = getSelNum();	// 2. 사용자 입력
-	processWork(selNum);	// 3. 처리
+	while (1)
+	{
+		viewMenu();				// 1. 메뉴 보여주기
+		selNum = getSelNum();	// 2. 사용자 입력
+		processWork(selNum);	// 3. 처리
+	}
 }

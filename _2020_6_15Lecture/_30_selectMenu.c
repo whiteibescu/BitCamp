@@ -12,16 +12,6 @@
 절차지향 프로그래밍(시간의 흐름, 선택)
 */
 
-/*
-설계
-1.하향식 설계
-그림, 아키텍처 -> 코드화
-2.상향식 설계
-; 부분(단위) 코드 완성
--> 감이 생긴다
--> 중간 정도에 전체 레이아웃을 설계
--> 나머지 부분을 완성해나간다
-*/
 #include <stdio.h>
 
 
@@ -46,35 +36,70 @@ int getSelNum()
 	return selNum;
 }
 
+void inputAddress()
+{
+	printf("\n입력처리하였습니다.\n");
+}
+
+void searchAddress()
+{
+	printf("\n검색처리하였습니다.\n");
+}
+
+void updateAddress()
+{
+	printf("\n수정처리하였습니다.\n");
+}
+void deleteAddress()
+{
+	printf("\n삭제처리하였습니다.\n");
+}
+void printAllAddress()
+{
+	printf("\n출력처리하였습니다.\n");
+}
+void exitApp()
+{
+	printf("\n종료하였습니다.\n");
+}
+
 void processWork(int selNum)
 {
-	if (selNum == 1)
-		printf("\n입력처리하였습니다.\n");
-	else if (selNum == 2)
-		printf("\n검색처리하였습니다.\n");
-	else if (selNum == 3)
-		printf("\n수정처리하였습니다.\n");
-	else if (selNum == 4)
-		printf("\n삭제처리하였습니다.\n");
-	else if (selNum == 5)
-		printf("\n출력처리하였습니다.\n");
-	else if (selNum == 6)
-		printf("\n종료하였습니다.\n");
+	switch (selNum)
+	{
+	case 1:
+			inputAddress();
+			break;
+	case 2:
+			searchAddress();
+			break;
+	case 3:
+			updateAddress();
+			break;
+	case 4:
+			deleteAddress();
+			break;
+	case 5:
+			printAllAddress();
+			break;
+	case 6:
+			exitApp();
+			default;
+
+	}
 }
 
 
 void main()
 {
 	int selNum = 0;  //4바이트 크기
-	
-	printf("%#x\n", viewMenu);
-	printf("%#x\n", getSelNum);
-	printf("%#x\n", processWork);
 
 
 
-
-	viewMenu();				// 1. 메뉴 보여주기
-	selNum = getSelNum();	// 2. 사용자 입력
-	processWork(selNum);	// 3. 처리
+	while (1)
+	{
+		viewMenu();				// 1. 메뉴 보여주기
+		selNum = getSelNum();	// 2. 사용자 입력
+		processWork(selNum);	// 3. 처리
+	}
 }
