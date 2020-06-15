@@ -63,6 +63,9 @@
     <ClCompile Include="_25_drawLine.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_26_selectMenu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="turboc.h">

@@ -142,7 +142,9 @@
     <ClCompile Include="..\2020-06-12Lecture\_09_moveSharp.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="_25_drawLine.c" />
+    <ClCompile Include="_25_drawLine.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="_24_drawBox.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -183,6 +185,7 @@
     <ClCompile Include="_23_drawWall.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="_26_selectMenu.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="turboc.h" />

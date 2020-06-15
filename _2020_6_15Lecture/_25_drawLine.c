@@ -65,6 +65,18 @@ void drawYLine(int sY, int eY, int xPos, const char* icon)
 	}
 }
 
+void drawBox1(int left, int top, int width, int height)
+{
+	drawXLine(left, left + width, top, "-");
+	drawXLine(left, left + width, top+height, "-");
+	drawYLine(top, top+height, left, "│");
+	drawYLine(top, top+height, left+width, "│");
+
+
+}
+
+
+
 void main()
 {
 	// #1. 상수를 만드는	방법
@@ -74,18 +86,18 @@ void main()
 	setcursortype(NOCURSOR);
 
 	// 벽 그리기
-	drawWall(0, WIDTH / 2, 0, HEIGHT + 2, "▦");	// x축
-	drawWall(0, HEIGHT, 1, WIDTH + 4, "▦");		// y축
+	drawXLine(0, WIDTH, HEIGHT + 2, "▦");		// x축
+	drawYLine(0, HEIGHT, WIDTH + 2, "▦");		// y축
 
 	// moveShape 코드 삽입
 	int x = 0, y = 0;		// 좌표값
 	int dirX = 1, dirY = 1;	// 변화값(증감)
 	while (1)
 	{
-		drawBox(0, 0, 10, 5);
-		drawBox(0, 25 - 5, 10, 5);
-		drawBox(80 - 10, 0, 10, 5);
-		drawBox(80 - 10, 25 - 5, 10, 5);
+		drawBox1(0, 0, 10, 5);
+		drawBox1(0, 25 - 5, 10, 5);
+		drawBox1(80 - 10, 0, 10, 5);
+		drawBox1(80 - 10, 25 - 5, 10, 5);
 		// 가운데 상자 그리기
 		int left = 0 + WIDTH / 2 / 2;
 		int top = 0 + HEIGHT / 2 / 2;
