@@ -18,13 +18,17 @@
 //3번에 1번 "쿵"
 //2번에 1번 "쩍" 출력
 
-void chopJudge(int a, int b) {
+void chopJudge(int decide, int koong, int jjuk) {
     int cnt = 0;
-    for (cnt = 0; cnt < a; ++cnt) {
-        if (cnt != 0 && cnt % b == 0) {
+    for (cnt = 1; cnt <= decide; ++cnt) {
+        printf("나무를 %d번 찍었습니다.\n", cnt);
+        if (cnt % jjuk == 0) {
+            printf("쩍!\n");
+        }
+        if (cnt % koong == 0) {
             printf("쿵!\n");
         }
-        printf("나무를 %d번 찍었습니다.\n", cnt + 1);
+        
     }
     printf("나무를 캐었습니다!!\n");
 }
@@ -39,7 +43,7 @@ int main()
     scanf_s("%d", &number);
 
     //chopTree(number);
-    chopJudge(number, 3);
+    chopJudge(number, 3, 2);
 
     return 0;
 }
