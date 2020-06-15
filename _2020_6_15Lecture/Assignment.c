@@ -25,13 +25,15 @@
 int chopTree() {
 	int number;
 	printf("찍을 회수를 입력해주세요 : ");
-	scanf("%d", &number);
+	scanf_s("%d", &number);
 
 	int cnt = 0;
-	for (cnt = number; cnt <= number; ++cnt) {
-		printf("나무를 %d번 찍었습니다. 쿵~\n", cnt);
+	for (cnt = 1; cnt <= number; ++cnt) {
+		printf("나무를 %d번 찍었습니다.\n", cnt);
 	}
 	printf("나무를 캐었습니다!!\n");
+
+	
 }
 
 
