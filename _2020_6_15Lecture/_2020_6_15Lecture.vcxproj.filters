@@ -54,6 +54,15 @@
     <ClCompile Include="_22_drawWall.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_23_drawWall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_24_drawBox.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_25_drawLine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="turboc.h">
