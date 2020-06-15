@@ -3,26 +3,22 @@
 
 void main()
 {
+	int x = 0;
+	int dir = 1; // 우:1, 좌: -1
 	setcursortype(NOCURSOR); // no 커서
-	while (1) {
+	while (1) { //for(;;) while과 같은뜻
 
-		for (int x = 0; x < 80; ++x)
-		{
-			gotoxy(x, 0);
-			puts("#");
-			delay(10);
-			gotoxy(x, 0);
-			puts(" ");
-		}
 
-		for (int x = 80; x >= 0; --x)
-		{
-			gotoxy(x, 0);
-			puts("#");
-			delay(10);
-			gotoxy(x, 0);
-			puts(" ");
-		}
+		gotoxy(x, 0);
+		puts("#");
+		delay(30);
+		gotoxy(x, 0);
+		puts(" ");
+		x = x + dir;  // x += dir;
+		if (x == 80)
+			dir = -1;
+		else if (x == 0)
+			dir = 1;
 	}
 }
 //1번 2번 해결 완료
