@@ -33,6 +33,27 @@
     <ClCompile Include="_15_moveSharp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_16_drawWall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_18_chopTree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_17_chopTree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_19_chopTree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_20_chopTree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_21_drawWall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_22_drawWall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="turboc.h">
