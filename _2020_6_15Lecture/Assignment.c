@@ -22,20 +22,27 @@
 
 
 
-
-void main()
-{
-	int cnt = 0;
-	int count = 0;
+int chopTree() {
+	int number;
 	printf("찍을 회수를 입력해주세요 : ");
-	scanf("%d", count);
+	scanf("%d", &number);
 
-
-	for (cnt = 1; cnt <= 1000; ++cnt) {
+	int cnt = 0;
+	for (cnt = number; cnt <= number; ++cnt) {
 		printf("나무를 %d번 찍었습니다. 쿵~\n", cnt);
 	}
 	printf("나무를 캐었습니다!!\n");
+}
 
+
+
+
+void main()
+{
+	chopTree();
+
+
+	return 0;
 
 
 	 
