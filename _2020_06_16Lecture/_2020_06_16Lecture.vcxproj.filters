@@ -36,6 +36,39 @@
     <ClCompile Include="_40_globalVar.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_41_Array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_42_Array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_43_Array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_44_Array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_45_Array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_46_Array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_47_array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_48_array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_49_strArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_50_strArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_51_strArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="turboc.h">

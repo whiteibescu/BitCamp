@@ -49,3 +49,4 @@ void main()
 	printf("VIPS에 입장한 고객은 %d 명입니다.", 
 			g_EnterNum);
 }
+
