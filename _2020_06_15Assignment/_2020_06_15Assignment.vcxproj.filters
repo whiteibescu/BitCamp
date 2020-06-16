@@ -33,5 +33,8 @@
     <ClCompile Include="Basic6.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="starstar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
