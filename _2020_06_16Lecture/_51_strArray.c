@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #define ST_NUM 3
 
@@ -19,6 +20,26 @@ void main()
 	*/
 	printf("1번째 학생 이름 입력 : ");
 	fgets(name0, sizeof(name0)-1, stdin);
+	name0[strlen(name0) - 1] = 0;	// '\n' => '\0'
 	printf("1번째 학생 국어 점수 입력: ");
-	scanf_s("%d", &kor0);
+	scanf_s("%d", &kor0); getchar();
+
+	printf("2번째 학생 이름 입력 : ");
+	fgets(name1, sizeof(name1) - 1, stdin);
+	name1[strlen(name1) - 1] = 0;	// '\n' => '\0'
+	printf("2번째 학생 국어 점수 입력: ");
+	scanf_s("%d", &kor1); getchar();
+
+	printf("3번째 학생 이름 입력 : ");
+	fgets(name2, sizeof(name2) - 1, stdin);
+	name2[strlen(name2) - 1] = 0;	// '\n' => '\0'
+	printf("3번째 학생 국어 점수 입력: ");
+	scanf_s("%d", &kor2); getchar();
+
+	printf("%s학생의 국어점수는 %d입니다\n",
+		name0, kor0);
+	printf("%s학생의 국어점수는 %d입니다\n",
+		name1, kor1);
+	printf("%s학생의 국어점수는 %d입니다\n",
+		name2, kor2);
 }

@@ -69,6 +69,27 @@
     <ClCompile Include="_51_strArray.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_52_strArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_53_strArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_54_strArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="homework.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_55_twoDimArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_56_twoDimArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_57_twoDimArray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="turboc.h">
