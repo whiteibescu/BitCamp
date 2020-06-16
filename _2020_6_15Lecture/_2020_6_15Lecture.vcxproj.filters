@@ -87,9 +87,6 @@
     <ClCompile Include="_33_selectMenu.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Assignment.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="turboc.h">

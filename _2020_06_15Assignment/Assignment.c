@@ -37,13 +37,19 @@ void chopJudge(int decide, int koong, int jjuk) {
 int main()
 {
     int number;
+    int koong;
+    int jjuk;
     void chopTree(int number);
 
     printf("찍을 회수를 입력해주세요 : ");
     scanf_s("%d", &number);
+    printf("몇번째에 쿵 : ");
+    scanf_s("%d", &koong);
+    printf("몇번째에 쩍 : ");
+    scanf_s("%d", &jjuk);
 
     //chopTree(number);
-    chopJudge(number, 3, 2);
+    chopJudge(number, koong, jjuk);
 
     return 0;
 }
