@@ -39,5 +39,28 @@
     <ClCompile Include="_65_using_pointer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_66_using_pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_67_using_pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_68_using_pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="turboc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_69_drawBar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_70_moveBar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="turboc.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
