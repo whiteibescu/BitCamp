@@ -27,5 +27,17 @@
     <ClCompile Include="_61_pointer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_62_using_pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_63_using_pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_64_using_pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_65_using_pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
