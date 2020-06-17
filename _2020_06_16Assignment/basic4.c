@@ -1,18 +1,27 @@
 #include <stdio.h>
+//
+//int main()
+//{		
+//	for (int i = 1; i <= 10; i++) 
+//		{
+//			if (i % 2 == 0) {
+//				printf("%d \n", i);
+//			}
+//
+//	} //참일때
+//
+//	return 0;
+//}
 
 int main()
 {
-	
+	int i = 1;
 	do
 	{
-		for (int i = 1; i <= 10; i++) 
+		++i;
+		if (i % 2 == 0) 
 		{
-			if (i % 2 == 0) {
-				printf("%d \n", i);
-			}
+		printf("%d \n", i);
 		}
-		break;
-	} while (1); //참일때
-
-	return 0;
+	} while (i <= 10);
 }
