@@ -46,35 +46,31 @@ void main()
 	preX = newX = WIDTH / 2 - strlen(bar) / 2;
 	preY = newY = HEIGHT / 5 * 4;
 
-	drawXLine(0, WIDTH + 2, HEIGHT + 2, "▥");
+	drawXLine(0, (WIDTH + 2) / 2, HEIGHT + 2, "▥");
 	drawYLine(0, HEIGHT + 2, WIDTH + 2, "▤");
 	drawBar(newX, newY, bar);
 
-	while(TRUE)
-	{ 
-		if (_kbhit())	// 키가 눌렸니?
-		{
-			preX = newX;
-			preY = newY;
+	while (TRUE)
+	{
+		preX = newX;
+		preY = newY;
 
-			char key = _getch();
-			switch (key)
-			{
-			case UP_KEY: 
-				newY--; 
-				break;
-			case DOWN_KEY: 
-				newY++; 
-				break;
-			case LEFT_KEY: 
-				newX--; 
-				break;
-			case RIGHT_KEY: 
-				newX++;	
-				break;
-			}
+		if (GetAsyncKeyState(VK_UP) & 0x8000)
+			newY--;
+		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+			newY++;
+		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+			newX--;
+		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+			newX++;
+
+		// 좌표의 변화가 있을 때만 다시 그리자
+		if (newX != preX || newY != preY)
+		{
 			drawBar(preX, preY, "        ");
 			drawBar(newX, newY, bar);
 		}
+		
+		delay(10);
 	}
 }

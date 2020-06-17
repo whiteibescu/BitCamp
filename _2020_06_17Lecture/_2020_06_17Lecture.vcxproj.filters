@@ -54,7 +54,16 @@
     <ClCompile Include="_69_drawBar.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_71_boundaryMoveBar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="_70_moveBar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_72_advanceMoveBar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_73_doubleMoveSharp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

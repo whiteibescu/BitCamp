@@ -46,12 +46,12 @@ void main()
 	preX = newX = WIDTH / 2 - strlen(bar) / 2;
 	preY = newY = HEIGHT / 5 * 4;
 
-	drawXLine(0, WIDTH + 2, HEIGHT + 2, "¢È");
+	drawXLine(0, (WIDTH + 2)/2, HEIGHT + 2, "¢È");
 	drawYLine(0, HEIGHT + 2, WIDTH + 2, "¢Ç");
 	drawBar(newX, newY, bar);
 
-	while(TRUE)
-	{ 
+	while (TRUE)
+	{
 		if (_kbhit())	// Å°°¡ ´­·È´Ï?
 		{
 			preX = newX;
@@ -60,19 +60,20 @@ void main()
 			char key = _getch();
 			switch (key)
 			{
-			case UP_KEY: 
-				newY--; 
+			case UP_KEY:
+				newY--;
 				break;
-			case DOWN_KEY: 
-				newY++; 
+			case DOWN_KEY:
+				newY++;
 				break;
-			case LEFT_KEY: 
-				newX--; 
+			case LEFT_KEY:
+				newX--;
 				break;
-			case RIGHT_KEY: 
-				newX++;	
+			case RIGHT_KEY:
+				newX++;
 				break;
 			}
+
 			drawBar(preX, preY, "        ");
 			drawBar(newX, newY, bar);
 		}
