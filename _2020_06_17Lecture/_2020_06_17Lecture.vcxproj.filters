@@ -24,5 +24,8 @@
     <ClCompile Include="_60_pointer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_61_pointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
