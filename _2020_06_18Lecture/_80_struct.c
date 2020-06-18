@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // 구조체 => 사용자 정의 자료형
 struct Student

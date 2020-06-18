@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // 구조체를 만들 때부터 별명을 짓는다.
 typedef struct Student
