@@ -14,4 +14,4 @@ int sec_to_time_p(int sec) {
 
 void main() {
 	sec_to_time_p(1000000);
-}
+} 
