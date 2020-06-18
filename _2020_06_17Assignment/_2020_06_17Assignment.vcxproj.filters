@@ -18,5 +18,20 @@
     <ClCompile Include="basic1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="basic2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basic5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basic3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basic4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basic6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
