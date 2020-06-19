@@ -57,6 +57,9 @@
     <ClCompile Include="_86_Hyc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pratice.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="turboc.h">
