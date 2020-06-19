@@ -15,35 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="_88_fileWrite.c">
+    <ClCompile Include="turboc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="_89_fileWrite.c">
+    <ClCompile Include="addressBook.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="_90_fileRead.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="_91_binaryWrite.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="_92_binaryRead.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="_93_structWrite.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="_94_structRead.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="_95_structArrayWrite.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="_96_structArrayRead.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="_97_structSort.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="turboc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
