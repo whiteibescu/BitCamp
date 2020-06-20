@@ -21,9 +21,6 @@
     <ClCompile Include="_75_boundaryMoveBar.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="turboc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="_76_drawLine.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -58,6 +55,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pratice.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="turboc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
