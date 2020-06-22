@@ -15,10 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sdkj.c">
+    <ClCompile Include="turboc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="turboc.c">
+    <ClCompile Include="pinball.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="we.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="222.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

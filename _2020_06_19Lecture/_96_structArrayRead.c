@@ -31,7 +31,7 @@ void main()
 	fread(&st, sizeof(st), ST_NUM, fp);
 
 	for (int i = 0; i < ST_NUM; i++) 
-	{
+	{	
 		showStudent(&st[i]);
 	}	
 
