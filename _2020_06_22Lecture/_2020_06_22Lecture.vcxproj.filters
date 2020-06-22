@@ -33,5 +33,8 @@
     <ClCompile Include="_104_calloc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="_105_realloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
