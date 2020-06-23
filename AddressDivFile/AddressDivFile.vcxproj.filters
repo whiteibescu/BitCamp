@@ -15,24 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="turboc.c">
+    <ClCompile Include="address.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pinball.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="we.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tetris.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FinalAssignment.c">
+    <ClCompile Include="addressProcess.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="turboc.h">
+    <ClInclude Include="addressDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addressProcess.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

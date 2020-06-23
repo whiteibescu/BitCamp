@@ -15,6 +15,7 @@
 
 int score = 0;
 int scores[10] = { 0 };
+int score_cnt = 0;
 
 void drawXLine(int sX, int eX, int yPos, const char* icon)
 {
@@ -81,6 +82,8 @@ int obYBouncce(int x, int y, int left, int top, int width, int hieght, int sc) {
 
 void check_game_over(void);
 void check_score(void);
+void loadScore();
+void saveScore();
 
 void main()
 {
@@ -154,7 +157,7 @@ RE:
         setcursortype(NOCURSOR);
         gotoxy(x, y);
         puts("o");
-        delay(5);
+        delay(1);
         gotoxy(x, y);
         puts(" ");
 
@@ -222,8 +225,14 @@ RE:
                     count = 0;
                     continue;
                 }
-                else if (restart == 2) { break; }
+                else if (restart == 2) 
+                {   
+                    clrscr();
+                    saveScore();
+                    loadScore();
+                    break;
 
+                }
             }
         }
 
@@ -245,37 +254,91 @@ RE:
     }
 }
 
+void saveScore()
+{
+    FILE* fp = NULL;
+    fopen_s(&fp, "score.bin", "wb");
+    fwrite(scores, sizeof(int), 10, fp);
+    fclose(fp);
+}
+
+void loadScore()
+{
+    FILE* fp = NULL;
+    fopen_s(&fp, "score.bin", "rb");
+    fread(scores, sizeof(int), 10, fp);
+    score_cnt = 10;
+    int max = 0;
+    int temp = 0;
+    for (int i = 0; i < score_cnt; i++)
+    {
+        
+        for (int j = i; j < score_cnt; j++) {
+            if (scores[j] > scores[i]) {
+                temp = scores[i];
+                scores[i] = scores[j];
+                scores[j] = temp;
+               
+            }
+            
+        }
+        printf("Score : %d\n\n", scores[i]);
+    }
+    printf(" Best score = %d\n", scores[0]);
+
+
+
+    
+
+    fclose(fp);
+
+}
+
 void check_game_over(void) {
 
-    FILE* file = NULL;
+    if (score_cnt == 10)
+        return;
 
-    printf("★★★ BEST SCORE! ★★★\n");    
+    scores[score_cnt] = score;
+    score_cnt++;
 
-    fopen_s(&file, "score.dat", "wb");
-    if (NULL == file) { //score.dat에 점수 저장, 없으면 파일 에러메세지  
-        printf("FILE ERROR: SYSTEM CANNOT WRITE BEST SCORE ON \"SCORE.DAT\"");
-    }
-    else {
-        scores[0] = score;
-        fwrite(scores, sizeof(40), 1, file); 
-       
-        
-        fclose(file);
-    }
+    //FILE* file = NULL;
+
+    //printf("★★★ BEST SCORE! ★★★\n");    
+
+    //fopen_s(&file, "score.dat", "wb");    
+    //if (NULL == file) { //score.dat에 점수 저장, 없으면 파일 에러메세지  
+    //    printf("FILE ERROR: SYSTEM CANNOT WRITE BEST SCORE ON \"SCORE.DAT\"");
+    //}
+    //else {
+    //    scores[score_cnt] = score;
+    //    score_cnt++;
+    //    //fwrite(&score, sizeof(int), 1, file);
+    //    fwrite(scores, sizeof(int), 10, file);
+    //    
+    //    fclose(file);
+    //}
 }
 
 void check_score(void)
 {
-    
-    FILE* file = NULL;
-    fopen_s(&file, "score.dat", "rb");
-    int temp[10] = { 0 };
-    fread(temp, sizeof(40), 1, file);
-    
-    for (int i = 0; i < 10; ++i) {
-        printf("Score : %d\n\n", temp[i]);
+    printf("------점수판--------\n\n");
+    for (int i = 0; i < score_cnt; i++)
+    {       
+        printf("Score : %d\n\n", scores[i]);
     }
+    
+    //FILE* file = NULL;
+    //fopen_s(&file, "score.dat", "rb");
+    //int temp[10] = { 0 };
+    ////fread(&score, sizeof(int), 1, file);
+    //fread(scores, sizeof(int), 10, file);
+    //
+    //for (int i = 0; i < 10; ++i) {
+    //    printf("Score : %d\n\n", temp[i]);
+    //}
 
-    fclose(file);
+    //fclose(file);
 
 }
+
