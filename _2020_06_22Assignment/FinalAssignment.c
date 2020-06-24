@@ -12,6 +12,8 @@
 #define LEFT_KEY 75
 #define RIGHT_KEY 77
 
+#define START_POINT 30
+
 int obStartX[] = { 38, 40, 57, 63, 54 };
 int obStartY[] = { 38, 50, 35, 46, 54 };
 int obWidth[] = { 4, 6, 12, 4, 12 };
@@ -83,7 +85,7 @@ void drawObs() {
 }
 
 
-int obXBouncce(int x, int y) {
+int obXBounce(int x, int y) {
     for (int i = 0; i < sizeof(obStartX) / sizeof(int); i++) {
         if ((x == obStartX[i] - 1 || x == obStartX[i] + obWidth[i] + 1) && y >= obStartY[i] && y <= obStartY[i] + obHieght[i]) {
             score += obScore[i];
@@ -92,7 +94,7 @@ int obXBouncce(int x, int y) {
     }
     return 1;
 }
-int obYBouncce(int x, int y) {
+int obYBounce(int x, int y) {
     for (int i = 0; i < sizeof(obStartX) / sizeof(int); i++) {
         if ((y == obStartY[i] - 1 || y == obStartY[i] + obHieght[i] + 1) && x >= obStartX[i] && x <= obStartX[i] + obWidth[i]) {
             score += obScore[i];
@@ -105,24 +107,18 @@ int obYBouncce(int x, int y) {
 
 
 void drawMap() {
-    drawXLine(2 + 30, WIDTH + 2 + 30, HEIGHT + 2 + 30, "*");
-    drawXLine(2 + 30, WIDTH + 2 + 30, 2 + 30, "*");
-    drawYLine(2 + 30, HEIGHT + 2 + 30, WIDTH + 2 + 30, "*");
-    drawYLine(2 + 30, HEIGHT + 2 + 30, 2 + 30, "*");
-
+    drawXLine(2 + START_POINT, WIDTH + 2 + START_POINT, HEIGHT + 2 + START_POINT, "*");
+    drawXLine(2 + START_POINT, WIDTH + 2 + START_POINT, 2 + START_POINT, "*");
+    drawYLine(2 + START_POINT, HEIGHT + 2 + START_POINT, WIDTH + 2 + START_POINT, "*");
+    drawYLine(2 + START_POINT, HEIGHT + 2 + START_POINT, 2 + START_POINT, "*");
     drawObs();
-
-
 }
 
 void printScore() {
     gotoxy(81, 37);
     printf("score : %d", score);
-
 }
-void playGame() {
 
-}
 int gameOver() {
     int restart;
     gotoxy(90, 52);
@@ -131,8 +127,7 @@ int gameOver() {
     puts("재도전 1, 종료 2");
     gotoxy(88, 56);
     printf("최종 점수 : %d\n", score);
-    check_game_over();
-    check_score();
+    showScore();
     gotoxy(88, 58);
     puts("입력 >>                   ");
     gotoxy(96, 58);
@@ -169,16 +164,12 @@ void loadScore()
     fopen_s(&fp, "score.bin", "rb");
     fread(scores, sizeof(int), sizeof(scores) / sizeof(int), fp);
     score_cnt = 10;
-    
-    
-    
     int max = 0;
     int temp = 0;
-
     printf("\n\n\t<     점 수 판     >\n\n\n");
-    for (int i = 0; i < sizeof(scores) / 4; i++)
+    for (int i = 0; i < sizeof(scores) / sizeof(int); i++)
     {
-        for (int j = i; j < sizeof(scores) / 4; j++) {
+        for (int j = i; j < sizeof(scores) / sizeof(int); j++) {
             if (scores[j] > scores[i]) {
                 temp = scores[i];
                 scores[i] = scores[j];
@@ -196,28 +187,22 @@ void loadScore()
         if (i == 9) printf("\t|   %2d등 :  %3d   |\n", i + 1, scores[i]);
         else printf("\t|   %2d등 :  %3d   |\n\n", i + 1, scores[i]);
 
-
     }
     printf("\t_ _ _ _ _ _ _ _ _ _\n\n");
-    //printf("\t-------------------\n\n");
-
 
     fclose(fp);
-
 }
 
-void check_game_over(void) {
+int showScore()
+{
     scores[score_cnt] = score;
     score_cnt++;
-}
-
-void check_score(void)
-{
     printf("------점수판--------\n\n");
     for (int i = 0; i < score_cnt; i++)
     {
         printf("Score : %d\n\n", scores[i]);
     }
+
 }
 
 void main()
@@ -227,11 +212,11 @@ void main()
     setcursortype(NOCURSOR);
     char* bar = "■■■■";
     int preX, preY, newX, newY;
-    preX = newX = WIDTH / 2 - strlen(bar) / 2 + 30;
+    preX = newX = WIDTH / 2 - strlen(bar) / 2 + START_POINT;
     preY = newY = HEIGHT / 5 * 4 + 38;
 
 
-    int x = 4 + 30, y = 3 + 30;
+    int x = 4 + START_POINT, y = 3 + START_POINT;
     int wayX = 1, wayY = 1;
     int speed = 0;
     int restart = 0;
@@ -250,29 +235,29 @@ void main()
         gotoxy(x, y);
         puts(" ");
 
-        if (speed == 1) {
+        if (speed == 2) {
             if (wayX == 1) x++;
             else x--;
             if (wayY == 1) y++;
             else y--;
-            if (x == 3 + 30 || x == WIDTH + 1 + 30) wayX *= -1;
-            if (y == 3 + 30 || y == HEIGHT + 1 + 30 || (y == newY - 1 && x >= newX && x <= newX + 8)) wayY *= -1;
+            if (x == 3 + START_POINT || x == WIDTH + 1 + START_POINT) wayX *= -1;
+            if (y == 3 + START_POINT || y == HEIGHT + 1 + START_POINT ||
+                 (y == newY - 1 && x >= newX && x <= newX + 8)) wayY *= -1;
 
-            wayX *= obXBouncce(x, y);
-            wayY *= obYBouncce(x, y);
-
+            wayX *= obXBounce(x, y);
+            wayY *= obYBounce(x, y);
 
             printScore();
             speed = 0;
-            if (y == HEIGHT / 5 * 4 + 38 + 1)
+
+            if (y == HEIGHT + START_POINT + 1)
             {
                 int restart = gameOver();
                 if (restart == 1) {
-                    x = 4 + 30, y = 3 + 30;
+                    x = 4 + START_POINT, y = 3 + START_POINT;
                     wayX = 1, wayY = 1;
                     speed = 0;
                     score = 0;
-                    continue;
                 }
                 else if (restart == 2) {
                     clrscr();
@@ -288,7 +273,7 @@ void main()
         preY = newY;
 
         if (GetAsyncKeyState(VK_LEFT) & 0x8000) {
-            if (newX > 3 + 30)
+            if (newX > 3 + START_POINT)
                 newX--;
         }
         if (GetAsyncKeyState(VK_RIGHT) & 0x8000) {
